@@ -39,8 +39,8 @@ app.post('/user', async (req, res) => {
 });
 
 app.post('/repos', async (req, res) => {
-    const { token, owner } = req.body;
-    const response = await axios.get(`https://api.github.com/users/${owner}/repos`, {
+    const { token } = req.body;
+    const response = await axios.get(`https://api.github.com/user/repos`, {
         headers: {
           'Authorization': `token ${token}`,
           'Accept': 'application/vnd.github.v3+json',
@@ -142,6 +142,6 @@ app.get('/', (req, res) => {
 });
 
 // 啟動伺服器，監聽特定的 port
-app.listen(5000, () => {
+app.listen(process.env.PORT || 5000, () => {
   console.log('App listening on port 5000!');
 });

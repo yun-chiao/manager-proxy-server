@@ -1,9 +1,7 @@
 name: manager-proxy-server
 
 build:
-  env:
-    NODE_ENV: production
-  command: yarn install && yarn build
+  env: production
 
 start:
-  command: yarn start
+  command: npm start
