@@ -126,7 +126,7 @@ app.post('/issue', async (req, res) => {
 
 app.post('/issues', async (req, res) => {
     const { token, owner, repo, per_page, page, labelsQuery, orderQuery, searchKey } = req.body;
-    const response =  await axios.get(`https://api.github.com/search/issues?per_page=${per_page}&page=${page}&q=state:open+label:${labelsQuery}+sort:created-${orderQuery}+${searchKey} in:title,body+repo:${owner}/${repo}+type:issue&timestamp=${Date.now()}`, {
+    const response =  await axios.get(`https://api.github.com/search/issues?per_page=${per_page}&page=${page}&q=state:open ${labelsQuery}+sort:created-${orderQuery}+${searchKey} in:title,body+repo:${owner}/${repo}+type:issue&timestamp=${Date.now()}`, {
         headers: {
           'Authorization': `token ${token}`,
           'Accept': 'application/vnd.github.v3+json',
