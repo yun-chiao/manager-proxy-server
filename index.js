@@ -25,13 +25,7 @@ app.post('/login/oauth/access_token', async (req, res) => {
       }
     });
 
-    // If the response is 2xx，send to the client directly.
-    if (response.status >= 200 && response.status < 300) {
-      res.send(response.data);
-    } else {
-      // If the response is not 2xx，send error to the client.
-      res.status(response.status).send(response.statusText);
-    }
+    res.send(response.data);
   } catch (error) {
     // If the response error，send error to the client.
     console.error(error);
@@ -50,13 +44,7 @@ app.post('/user', async (req, res) => {
         }
       });
 
-      // If the response is 2xx，send to the client directly.
-      if (response.status >= 200 && response.status < 300) {
-        res.send(response.data);
-      } else {
-        // If the response is not 2xx，send error to the client.
-        res.status(response.status).send(response.statusText);
-      }
+      res.send(response.data);
     } catch (error) {
       // If the response error，send error to the client.
       console.error(error);
@@ -75,13 +63,7 @@ app.post('/repos', async (req, res) => {
         }
     });
 
-    // If the response is 2xx，send to the client directly.
-    if (response.status >= 200 && response.status < 300) {
-      res.send(response.data);
-    } else {
-      // If the response is not 2xx，send error to the client.
-      res.status(response.status).send(response.statusText);
-    }
+    res.send(response.data);
   } catch (error) {
     // If the response error，send error to the client.
     console.error(error);
@@ -102,13 +84,7 @@ app.post('/close', async (req, res) => {
         }
       });
 
-    // If the response is 2xx，send to the client directly.
-    if (response.status >= 200 && response.status < 300) {
-      res.send(response.data);
-    } else {
-      // If the response is not 2xx，send error to the client.
-      res.status(response.status).send(response.statusText);
-    }
+    res.send(response.data);
   } catch (error) {
     // If the response error，send error to the client.
     console.error(error);
@@ -128,13 +104,7 @@ app.post('/updateState', async (req, res) => {
           'X-GitHub-Api-Version': '2022-11-28',
         }
       });
-    // If the response is 2xx，send to the client directly.
-    if (response.status >= 200 && response.status < 300) {
-      res.send(response.data);
-    } else {
-      // If the response is not 2xx，send error to the client.
-      res.status(response.status).send(response.statusText);
-    }
+    res.send(response.data);
   } catch (error) {
     // If the response error，send error to the client.
     console.error(error);
@@ -159,13 +129,7 @@ app.post('/createIssue', async (req, res) => {
           },
         }
       );
-    // If the response is 2xx，send to the client directly.
-    if (response.status >= 200 && response.status < 300) {
-      res.send(response.data);
-    } else {
-      // If the response is not 2xx，send error to the client.
-      res.status(response.status).send(response.statusText);
-    }
+    res.send(response.data);
   } catch (error) {
     // If the response error，send error to the client.
     console.error(error);
@@ -186,13 +150,7 @@ app.post('/updateIssue', async (req, res) => {
           'X-GitHub-Api-Version': '2022-11-28',
         }
       });
-    // If the response is 2xx，send to the client directly.
-    if (response.status >= 200 && response.status < 300) {
-      res.send(response.data);
-    } else {
-      // If the response is not 2xx，send error to the client.
-      res.status(response.status).send(response.statusText);
-    }
+    res.send(response.data);
   } catch (error) {
     // If the response error，send error to the client.
     console.error(error);
@@ -210,13 +168,7 @@ app.post('/issue', async (req, res) => {
           'X-GitHub-Api-Version': '2022-11-28', 
         }
     })
-    // If the response is 2xx，send to the client directly.
-    if (response.status >= 200 && response.status < 300) {
-      res.send(response.data);
-    } else {
-      // If the response is not 2xx，send error to the client.
-      res.status(response.status).send(response.statusText);
-    }
+    res.send(response.data);
   } catch (error) {
     // If the response error，send error to the client.
     console.error(error);
@@ -234,13 +186,7 @@ app.post('/issues', async (req, res) => {
           'X-GitHub-Api-Version': '2022-11-28', 
         }
     })
-    // If the response is 2xx，send to the client directly.
-    if (response.status >= 200 && response.status < 300) {
-      res.send(response.data);
-    } else {
-      // If the response is not 2xx，send error to the client.
-      res.status(response.status).send(response.statusText);
-    }
+    res.send(response.data);
   } catch (error) {
     // If the response error，send error to the client.
     console.error(error);
